@@ -1,13 +1,17 @@
 create table patients (
-	patientid INT,
+	patientid INT NOT NULL,
 	fName VARCHAR(50),
 	LName VARCHAR(50),
 	phone VARCHAR(50),
 	address VARCHAR(50),
 	city VARCHAR(50),
 	zipcode VARCHAR(50),
-	state VARCHAR(50)
+	state VARCHAR(50),
+    primary key (patientid)
 );
+
+select * from patients;
+
 insert into patients (patientid, fName, LName, phone, address, city, zipcode, state) values (1, 'Roman', 'Cirlos', '318-368-3109', '106 Hazelcrest Trail', 'Shreveport', '71105', 'Louisiana');
 insert into patients (patientid, fName, LName, phone, address, city, zipcode, state) values (2, 'Robbie', 'Bonny', '504-227-9062', '30355 Katie Pass', 'New Orleans', '70124', 'Louisiana');
 insert into patients (patientid, fName, LName, phone, address, city, zipcode, state) values (3, 'Noelyn', 'Ebbs', '337-256-3431', '6 Dexter Alley', 'Lake Charles', '70616', 'Louisiana');

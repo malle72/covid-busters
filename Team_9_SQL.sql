@@ -11,6 +11,7 @@ drop table disease;
 SET FOREIGN_KEY_CHECKS=1;
 
 */
+
 /**
 -- create statements -- 
 create table disease(
@@ -35,7 +36,7 @@ create table MedStaff_Data (
 	fName VARCHAR(50),
 	lName VARCHAR(50),
 	salary INT,
-	startDate DATE,
+	startDate VARCHAR(50),
 	jobTitle VARCHAR(50),
     primary key (staffID),
     clinicID INT,
@@ -68,7 +69,7 @@ create table diagnosis (
 	diagnosisID INT NOT NULL,
 	patientID INT NOT NULL,
 	diseaseID INT,
-	prescription VARCHAR(50),
+	prescription VARCHAR(255),
     primary key (diagnosisID),
     constraint fk_disease_diseaseID foreign key (diseaseID) references disease(diseaseID),
     constraint fk_patients_patientID_ foreign key (patientID) references patients(patientid)
@@ -76,7 +77,7 @@ create table diagnosis (
 */
 
 -- insert statements --
-
+/**
 insert into MedStaff_Data (staffID, fName, lName, salary, startDate, jobTitle, clinicID) values (1, 'Andrej', 'Masden', 76094, '4/6/2020', 'Medical Assistant', 25);
 insert into MedStaff_Data (staffID, fName, lName, salary, startDate, jobTitle, clinicID) values (2, 'Lindi', 'Toffanini', 73997, '3/28/2020', 'Admission Intake Clerk', 23);
 insert into MedStaff_Data (staffID, fName, lName, salary, startDate, jobTitle, clinicID) values (3, 'Daffi', 'Challace', 51457, '4/13/2020', 'Coordinator', 36);
@@ -3233,4 +3234,12 @@ insert into ClinicLocation (clinicID, name, address, city, state, zip) values (3
 insert into ClinicLocation (clinicID, name, address, city, state, zip) values (38, 'Koch Group Clinic', '01 Village Green Trail', 'New Orleans', 'LA', '70142');
 insert into ClinicLocation (clinicID, name, address, city, state, zip) values (39, 'Kilback-Ortiz Clinic', '38470 Stephen Way', 'Alexandria', 'LA', '71307');
 insert into ClinicLocation (clinicID, name, address, city, state, zip) values (40, 'Jaskolski Group Clinic', '2176 Lien Alley', 'Alexandria', 'LA', '71307');
+
+*/
+
+
+select c.clinicID, c.address, c.city, count(m.clinicID) from medstaff_data m, cliniclocation c where m.clinicID = c.clinicID group by c.clinicID;
+
+
+
 

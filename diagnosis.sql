@@ -1,9 +1,17 @@
+/*
 create table diagnosis (
-	diagnosisID INT,
-	patientID INT,
+	diagnosisID INT NOT NULL,
+	patientID INT NOT NULL,
 	diseaseID INT,
-	prescription VARCHAR(50)
+	prescription VARCHAR(50),
+    primary key (diagnosisID),
+    constraint fk_disease_diseaseID foreign key (diseaseID) references disease(diseaseID),
+    constraint fk_patients_patientID_ foreign key (patientID) references patients(patientid)
 );
+*/
+
+select * from diagnosis;
+
 insert into diagnosis (diagnosisID, patientID, diseaseID, prescription) values (1, 1, 2, 'ShopRite Nasal');
 insert into diagnosis (diagnosisID, patientID, diseaseID, prescription) values (2, 2, 11, 'Cephalosporium');
 insert into diagnosis (diagnosisID, patientID, diseaseID, prescription) values (3, 3, null, '');

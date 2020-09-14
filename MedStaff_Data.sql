@@ -14,6 +14,8 @@ create table MedStaff_Data (
 
 */
 
+select * from medstaff_data;
+
 insert into MedStaff_Data (staffID, fName, lName, salary, startDate, jobTitle, clinicID) values (1, 'Andrej', 'Masden', 76094, '4/6/2020', 'Medical Assistant', 25);
 insert into MedStaff_Data (staffID, fName, lName, salary, startDate, jobTitle, clinicID) values (2, 'Lindi', 'Toffanini', 73997, '3/28/2020', 'Admission Intake Clerk', 23);
 insert into MedStaff_Data (staffID, fName, lName, salary, startDate, jobTitle, clinicID) values (3, 'Daffi', 'Challace', 51457, '4/13/2020', 'Coordinator', 36);

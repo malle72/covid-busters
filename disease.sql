@@ -1,11 +1,12 @@
 create table disease(
-diseaseID varchar(45) NOT NULL,
+diseaseID int NOT NULL,
 commonName varchar(50),
 scientificName varchar(50),
 requiresReferral boolean not null default 0,
 primary key (diseaseID)
 );
 
+select * from disease;
 
 insert into disease (diseaseID, commonName, scientificName, requiresReferral) values (1, 'Desert Cold', 'Heloderma horridum', false);
 insert into disease (diseaseID, commonName, scientificName, requiresReferral) values (2, 'Numb Leprosy', 'Lepilemur rufescens', false);

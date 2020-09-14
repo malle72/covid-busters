@@ -1,11 +1,19 @@
+/*
 create table appointments (
-	apptID INT,
-	apptDate DATE,
+	apptID INT NOT NULL,
+	apptDate VARCHAR(50),
 	personID INT,
 	staffID INT,
 	apptTime VARCHAR(50),
-	referal VARCHAR(50)
+	referal VARCHAR(50),
+    primary key (apptID),
+    constraint fk_patients_patientID foreign key (personID) references patients(patientid),
+    constraint fk_medstaff_staffID foreign key (staffID) references MedStaff_Data(staffID)
 );
+*/
+
+select * from appointments;
+
 insert into appointments (apptID, apptDate, personID, staffID, apptTime, referal) values (1, '04/28/2020', 443, 7, '1:08 PM', true);
 insert into appointments (apptID, apptDate, personID, staffID, apptTime, referal) values (2, '03/14/2020', 723, 33, '9:33 AM', false);
 insert into appointments (apptID, apptDate, personID, staffID, apptTime, referal) values (3, '01/08/2020', 870, 30, '1:15 PM', true);

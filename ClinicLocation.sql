@@ -6,6 +6,9 @@ create table ClinicLocation (
 	state VARCHAR(50),
 	zip VARCHAR(50)
 );
+
+select *  from cliniclocation;
+
 insert into ClinicLocation (clinicID, name, address, city, state, zip) values (1, 'Smith Group Clinic', '1 Bonner Way', 'New Orleans', 'LA', '70154');
 insert into ClinicLocation (clinicID, name, address, city, state, zip) values (2, 'Morar, Koch and Gerlach Clinic', '5803 Lake View Alley', 'Shreveport', 'LA', '71105');
 insert into ClinicLocation (clinicID, name, address, city, state, zip) values (3, 'Gottlieb LLC Clinic', '052 Quincy Avenue', 'Lake Charles', 'LA', '70607');
